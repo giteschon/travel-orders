@@ -1,0 +1,89 @@
+﻿@model IEnumerable<TravelOrders.Models.TravelOrder>
+
+@{
+    ViewBag.Title = "GetTravelOrders";
+}
+
+<h2>GetTravelOrders</h2>
+
+<p>
+
+    @Html.ActionLink("Add Travel Order", "AddTravelOrder", "TravelOrder", new { @class = "btn btn-default" })
+    @Html.ActionLink("Active travel orders", "FilterOpened", "TravelOrder", new { @class = "btn btn-default" })
+    @Html.ActionLink("Closed travel Order", "FilterFuture", "TravelOrder", new { @class = "btn btn-default" })
+    @Html.ActionLink("Future Travel Orders", "FilterClosed", "TravelOrder", new { @class = "btn btn-default" })
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.TravelOrderNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TravelOrderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfDeparture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DestinationStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DestinationEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeginningCounterStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndCounterStatus)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @Html.HiddenFor(modelItem => item.IDTravelOrder)
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TravelOrderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TravelOrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfDeparture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeginningCounterStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndCounterStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditTravelOrder", new { @idTravelOrder = item.IDTravelOrder }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Routes", "GetRoutes", "Route", new { @idTravelOrder = item.IDTravelOrder }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Delete", "DeleteTravelOrder", new { @idTravelOrder = item.IDTravelOrder }, new { @class = "btn btn-danger" })
+
+            </td>
+        </tr>
+    }
+
+</table>

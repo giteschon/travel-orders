@@ -1,0 +1,82 @@
+﻿@model TravelOrders.Models.TravelOrder
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TravelOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDTravelOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDTravelOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TravelOrderNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TravelOrderNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TravelOrderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TravelOrderDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfDeparture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfDeparture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BeginningCounterStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeginningCounterStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndCounterStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndCounterStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "GetTravelOrders")
+</p>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<TravelOrders.Models.Route>
+
+@{
+    ViewBag.Title = "GetRoutes";
+}
+
+<h2>GetRoutes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddRoute")
+</p>
+<p>
+    @Html.ActionLink("Get route from xml", "ReadRoute", "Xml")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDRoute)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ALatitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ALongitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BLatitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BLongitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KilometeresSum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AverageSpeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsedFuel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDRoute)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ALatitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ALongitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BLatitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BLongitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KilometeresSum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AverageSpeed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsedFuel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditRoute", new { @idRoute = item.IDRoute }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("To xml", "RouteToXml","Xml", new { @idRoute = item.IDRoute }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Delete", "DeleteRoute", new { @idRoute = item.IDRoute }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

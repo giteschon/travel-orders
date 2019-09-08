@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DbData>
+  <Drivers>
+    <Driver IDDriver="1">
+      <Name>Pero</Name>
+      <Surname>Peric</Surname>
+      <Mobile>0000</Mobile>
+      <LicenceNo>1253</LicenceNo>
+    </Driver>
+    <Driver IDDriver="2">
+      <Name>Ana</Name>
+      <Surname>Anic</Surname>
+      <Mobile>1111</Mobile>
+      <LicenceNo>54321</LicenceNo>
+    </Driver>
+  </Drivers>
+  <Vehicles>
+    <Vehicle IDVehicle="1">
+      <Type>fha</Type>
+      <IDBrand>1</IDBrand>
+      <YearOfProduction>2000</YearOfProduction>
+      <InitialKilometers>500</InitialKilometers>
+      <IsAvailable>true</IsAvailable>
+    </Vehicle>
+    <Vehicle IDVehicle="2">
+      <Type>keke</Type>
+      <IDBrand>5</IDBrand>
+      <YearOfProduction>2012</YearOfProduction>
+      <InitialKilometers>1800</InitialKilometers>
+      <IsAvailable>false</IsAvailable>
+    </Vehicle>
+    <Vehicle IDVehicle="3">
+      <Type>a</Type>
+      <IDBrand>2</IDBrand>
+      <YearOfProduction>2016</YearOfProduction>
+      <InitialKilometers>400</InitialKilometers>
+      <IsAvailable>false</IsAvailable>
+    </Vehicle>
+  </Vehicles>
+  <TravelOrders>
+    <TravelOrder IDTravelOrder="1">
+      <TravelOrderNo>1/2018</TravelOrderNo>
+      <TravelOrderDate>30/10/2018</TravelOrderDate>
+      <IDDriver>1</IDDriver>
+      <IDVehicle>1</IDVehicle>
+      <DateOfDeparture>30/10/2018</DateOfDeparture>
+      <StartTime>08:00</StartTime>
+      <EndTime>09:00</EndTime>
+      <DestinationStart>Zagreb</DestinationStart>
+      <DestinationEnd>Varaždin</DestinationEnd>
+      <BeginningCounterStatus>500</BeginningCounterStatus>
+      <EndCounterStatus>600</EndCounterStatus>
+      <IDTravelOrderType>1</IDTravelOrderType>
+      <IDDailyAllowance>1</IDDailyAllowance>
+    </TravelOrder>
+    <TravelOrder IDTravelOrder="2">
+      <TravelOrderNo>2/2019</TravelOrderNo>
+      <TravelOrderDate>23/01/2019</TravelOrderDate>
+      <IDDriver>2</IDDriver>
+      <IDVehicle>1</IDVehicle>
+      <DateOfDeparture>23/01/2019</DateOfDeparture>
+      <StartTime>08:00</StartTime>
+      <EndTime>10:00</EndTime>
+      <DestinationStart>Zagreb</DestinationStart>
+      <DestinationEnd>Varaždin</DestinationEnd>
+      <BeginningCounterStatus>500</BeginningCounterStatus>
+      <EndCounterStatus>600</EndCounterStatus>
+      <IDTravelOrderType>1</IDTravelOrderType>
+      <IDDailyAllowance>1</IDDailyAllowance>
+    </TravelOrder>
+    <TravelOrder IDTravelOrder="3">
+      <TravelOrderNo>3/2018</TravelOrderNo>
+      <TravelOrderDate>30/12/2018</TravelOrderDate>
+      <IDDriver>2</IDDriver>
+      <IDVehicle>2</IDVehicle>
+      <DateOfDeparture>30/12/2018</DateOfDeparture>
+      <StartTime>08:00</StartTime>
+      <EndTime>20:00</EndTime>
+      <DestinationStart>Zagreb</DestinationStart>
+      <DestinationEnd>Dubrovnik</DestinationEnd>
+      <BeginningCounterStatus>600</BeginningCounterStatus>
+      <EndCounterStatus>1200</EndCounterStatus>
+      <IDTravelOrderType>1</IDTravelOrderType>
+      <IDDailyAllowance>1</IDDailyAllowance>
+    </TravelOrder>
+  </TravelOrders>
+  <Routes>
+    <Route IDRoute="1">
+      <IDTravelOrder>1</IDTravelOrder>
+      <ALatitude>15</ALatitude>
+      <ALongitude>7</ALongitude>
+      <BLatitude>20</BLatitude>
+      <BLongitude>7</BLongitude>
+      <KilometeresSum>20</KilometeresSum>
+      <AverageSpeed>60</AverageSpeed>
+      <UsedFuel>7</UsedFuel>
+    </Route>
+    <Route IDRoute="2">
+      <IDTravelOrder>1</IDTravelOrder>
+      <ALatitude>200</ALatitude>
+      <ALongitude>200</ALongitude>
+      <BLatitude>200</BLatitude>
+      <BLongitude>220</BLongitude>
+      <KilometeresSum>200</KilometeresSum>
+      <AverageSpeed>100</AverageSpeed>
+      <UsedFuel>30</UsedFuel>
+    </Route>
+  </Routes>
+  <Services>
+    <Service IDService="1">
+      <VehicleID>1</VehicleID>
+      <DateOfService>23/02/2019</DateOfService>
+      <Price>8008.0000</Price>
+    </Service>
+  </Services>
+  <Items>
+    <ItemService IDItem="1">
+      <ServiceID>1</ServiceID>
+      <Details>promjena guma</Details>
+    </ItemService>
+    <ItemService IDItem="2">
+      <ServiceID>1</ServiceID>
+      <Details>auspuh</Details>
+    </ItemService>
+  </Items>
+</DbData>

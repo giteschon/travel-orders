@@ -1,0 +1,105 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="IDRoute" type="xs:int" minOccurs="0" />
+                <xs:element name="TravelOrderID" type="xs:int" minOccurs="0" />
+                <xs:element name="ALatitude" type="xs:double" minOccurs="0" />
+                <xs:element name="ALongitude" type="xs:double" minOccurs="0" />
+                <xs:element name="BLatitude" type="xs:double" minOccurs="0" />
+                <xs:element name="BLongitude" type="xs:double" minOccurs="0" />
+                <xs:element name="KilometeresSum" type="xs:double" minOccurs="0" />
+                <xs:element name="AverageSpeed" type="xs:double" minOccurs="0" />
+                <xs:element name="UsedFuel" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Table1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="IDTravelOrder" type="xs:int" minOccurs="0" />
+                <xs:element name="TravelOrderNo" type="xs:string" minOccurs="0" />
+                <xs:element name="DriverID" type="xs:int" minOccurs="0" />
+                <xs:element name="VehicleID" type="xs:int" minOccurs="0" />
+                <xs:element name="DestinationStart" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationEnd" type="xs:string" minOccurs="0" />
+                <xs:element name="BeginningCounterStatus" type="xs:double" minOccurs="0" />
+                <xs:element name="EndCounterStatus" type="xs:double" minOccurs="0" />
+                <xs:element name="TravelOrderTypeID" type="xs:int" minOccurs="0" />
+                <xs:element name="DailyAllowanceID" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+    <xs:annotation>
+      <xs:appinfo>
+        <msdata:Relationship name="rel" msdata:parent="Table1" msdata:child="Table" msdata:parentkey="IDTravelOrder" msdata:childkey="TravelOrderID" />
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:schema>
+  <Table>
+    <IDRoute>1</IDRoute>
+    <TravelOrderID>1</TravelOrderID>
+    <ALatitude>15</ALatitude>
+    <ALongitude>15</ALongitude>
+    <BLatitude>15</BLatitude>
+    <BLongitude>15</BLongitude>
+    <KilometeresSum>15</KilometeresSum>
+    <AverageSpeed>15</AverageSpeed>
+    <UsedFuel>15</UsedFuel>
+  </Table>
+  <Table>
+    <IDRoute>2</IDRoute>
+    <TravelOrderID>2</TravelOrderID>
+    <ALatitude>7</ALatitude>
+    <ALongitude>7</ALongitude>
+    <BLatitude>7</BLatitude>
+    <BLongitude>7</BLongitude>
+    <KilometeresSum>7</KilometeresSum>
+    <AverageSpeed>7</AverageSpeed>
+    <UsedFuel>7</UsedFuel>
+  </Table>
+  <Table1>
+    <IDTravelOrder>1</IDTravelOrder>
+    <TravelOrderNo>1/2018</TravelOrderNo>
+    <DriverID>1</DriverID>
+    <VehicleID>1</VehicleID>
+    <DestinationStart>Zagreb</DestinationStart>
+    <DestinationEnd>Varaždin</DestinationEnd>
+    <BeginningCounterStatus>500</BeginningCounterStatus>
+    <EndCounterStatus>600</EndCounterStatus>
+    <TravelOrderTypeID>1</TravelOrderTypeID>
+    <DailyAllowanceID>1</DailyAllowanceID>
+  </Table1>
+  <Table1>
+    <IDTravelOrder>2</IDTravelOrder>
+    <TravelOrderNo>2/2018</TravelOrderNo>
+    <DriverID>2</DriverID>
+    <VehicleID>2</VehicleID>
+    <DestinationStart>Zagreb</DestinationStart>
+    <DestinationEnd>Varaždin</DestinationEnd>
+    <BeginningCounterStatus>700</BeginningCounterStatus>
+    <EndCounterStatus>800</EndCounterStatus>
+    <TravelOrderTypeID>2</TravelOrderTypeID>
+    <DailyAllowanceID>2</DailyAllowanceID>
+  </Table1>
+  <Table1>
+    <IDTravelOrder>3</IDTravelOrder>
+    <TravelOrderNo>3/2018</TravelOrderNo>
+    <DriverID>2</DriverID>
+    <VehicleID>1</VehicleID>
+    <DestinationStart>Zagreb</DestinationStart>
+    <DestinationEnd>Varaždin</DestinationEnd>
+    <BeginningCounterStatus>1500</BeginningCounterStatus>
+    <EndCounterStatus>3000</EndCounterStatus>
+    <TravelOrderTypeID>3</TravelOrderTypeID>
+    <DailyAllowanceID>3</DailyAllowanceID>
+  </Table1>
+</NewDataSet>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TravelOrdersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ItemService">
+          <Key>
+            <PropertyRef Name="IDItem" />
+          </Key>
+          <Property Name="IDItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceID" Type="int" />
+          <Property Name="Details" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="IDService" />
+          </Key>
+          <Property Name="IDService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="DateOfService" Type="date" />
+          <Property Name="Price" Type="money" />
+        </EntityType>
+        <Association Name="FK__ItemServi__Servi__6FE99F9F">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="ItemService" Type="Self.ItemService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="IDService" />
+            </Principal>
+            <Dependent Role="ItemService">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AddItemService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="serviceId" Type="int" Mode="In" />
+          <Parameter Name="details" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="AddService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vehicleId" Type="int" Mode="In" />
+          <Parameter Name="date" Type="date" Mode="In" />
+          <Parameter Name="price" Type="money" Mode="In" />
+        </Function>
+        <Function Name="DeleteItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EditItemService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="serviceId" Type="int" Mode="In" />
+          <Parameter Name="details" Type="nvarchar" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EditService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vehicleId" Type="int" Mode="In" />
+          <Parameter Name="date" Type="date" Mode="In" />
+          <Parameter Name="price" Type="money" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetItemsPerService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idService" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetServicesPerVehicle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idVehcle" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="TravelOrdersModelStoreContainer">
+          <EntitySet Name="ItemService" EntityType="Self.ItemService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ItemServi__Servi__6FE99F9F" Association="Self.FK__ItemServi__Servi__6FE99F9F">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="ItemService" EntitySet="ItemService" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TravelOrdersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ItemService">
+          <Key>
+            <PropertyRef Name="IDItem" />
+          </Key>
+          <Property Name="IDItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceID" Type="Int32" />
+          <Property Name="Details" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__ItemServi__Servi__6FE99F9F" FromRole="ItemService" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="IDService" />
+          </Key>
+          <Property Name="IDService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="DateOfService" Type="DateTime" Precision="0" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="ItemServices" Relationship="Self.FK__ItemServi__Servi__6FE99F9F" FromRole="Service" ToRole="ItemService" />
+        </EntityType>
+        <Association Name="FK__ItemServi__Servi__6FE99F9F">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="ItemService" Type="Self.ItemService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="IDService" />
+            </Principal>
+            <Dependent Role="ItemService">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TravelOrdersEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ItemServices" EntityType="Self.ItemService" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <AssociationSet Name="FK__ItemServi__Servi__6FE99F9F" Association="Self.FK__ItemServi__Servi__6FE99F9F">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="ItemService" EntitySet="ItemServices" />
+          </AssociationSet>
+          <FunctionImport Name="AddItemService">
+            <Parameter Name="serviceId" Mode="In" Type="Int32" />
+            <Parameter Name="details" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddService">
+            <Parameter Name="vehicleId" Mode="In" Type="Int32" />
+            <Parameter Name="date" Mode="In" Type="DateTime" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteItem">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteService">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="EditItemService">
+            <Parameter Name="serviceId" Mode="In" Type="Int32" />
+            <Parameter Name="details" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="EditService">
+            <Parameter Name="vehicleId" Mode="In" Type="Int32" />
+            <Parameter Name="date" Mode="In" Type="DateTime" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetItem" ReturnType="Collection(TravelOrdersModel.GetItem_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetItemsPerService" ReturnType="Collection(TravelOrdersModel.GetItemsPerService_Result)">
+            <Parameter Name="idService" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetService" ReturnType="Collection(TravelOrdersModel.GetService_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetServicesPerVehicle" EntitySet="Services" ReturnType="Collection(TravelOrdersModel.Service)">
+            <Parameter Name="idVehcle" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetItem_Result">
+          <Property Type="Int32" Name="IDItem" Nullable="false" />
+          <Property Type="Int32" Name="ServiceID" Nullable="true" />
+          <Property Type="String" Name="Details" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="GetItemsPerService_Result">
+          <Property Type="Int32" Name="IDItem" Nullable="false" />
+          <Property Type="Int32" Name="ServiceID" Nullable="true" />
+          <Property Type="String" Name="Details" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="GetService_Result">
+          <Property Type="Int32" Name="IDService" Nullable="false" />
+          <Property Type="Int32" Name="VehicleID" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfService" Nullable="true" />
+          <Property Type="Decimal" Name="Price" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="GetServicesPerVehicle_Result">
+          <Property Type="Int32" Name="IDService" Nullable="false" />
+          <Property Type="Int32" Name="VehicleID" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfService" Nullable="true" />
+          <Property Type="Decimal" Name="Price" Nullable="true" Precision="19" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TravelOrdersModelStoreContainer" CdmEntityContainer="TravelOrdersEntities1">
+          <EntitySetMapping Name="ItemServices">
+            <EntityTypeMapping TypeName="TravelOrdersModel.ItemService">
+              <MappingFragment StoreEntitySet="ItemService">
+                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="TravelOrdersModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="IDService" ColumnName="IDService" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="DateOfService" ColumnName="DateOfService" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddItemService" FunctionName="TravelOrdersModel.Store.AddItemService" />
+          <FunctionImportMapping FunctionImportName="AddService" FunctionName="TravelOrdersModel.Store.AddService" />
+          <FunctionImportMapping FunctionImportName="DeleteItem" FunctionName="TravelOrdersModel.Store.DeleteItem" />
+          <FunctionImportMapping FunctionImportName="DeleteService" FunctionName="TravelOrdersModel.Store.DeleteService" />
+          <FunctionImportMapping FunctionImportName="EditItemService" FunctionName="TravelOrdersModel.Store.EditItemService" />
+          <FunctionImportMapping FunctionImportName="EditService" FunctionName="TravelOrdersModel.Store.EditService" />
+          <FunctionImportMapping FunctionImportName="GetItem" FunctionName="TravelOrdersModel.Store.GetItem">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TravelOrdersModel.GetItem_Result">
+                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetItemsPerService" FunctionName="TravelOrdersModel.Store.GetItemsPerService">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TravelOrdersModel.GetItemsPerService_Result">
+                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetService" FunctionName="TravelOrdersModel.Store.GetService">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TravelOrdersModel.GetService_Result">
+                <ScalarProperty Name="IDService" ColumnName="IDService" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="DateOfService" ColumnName="DateOfService" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetServicesPerVehicle" FunctionName="TravelOrdersModel.Store.GetServicesPerVehicle">
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

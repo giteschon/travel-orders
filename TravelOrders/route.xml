@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<RouteData>
+  <Route>
+    <IDRoute>4</IDRoute>
+    <TravelOrderID>1</TravelOrderID>
+    <ALatitude>15</ALatitude>
+    <ALongitude>7</ALongitude>
+    <BLatitude>20</BLatitude>
+    <BLongitude>7</BLongitude>
+    <KilometeresSum>20</KilometeresSum>
+    <AverageSpeed>7</AverageSpeed>
+    <UsedFuel>7</UsedFuel>
+  </Route>
+</RouteData>

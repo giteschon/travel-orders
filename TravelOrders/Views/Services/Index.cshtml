@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TravelOrders.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IDService }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("View Details", "Index", "ItemServices", new { idService = item.IDService }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.IDService }, new { @class = "btn btn-danger" })
+
+        </td>
+    </tr>
+}
+
+</table>

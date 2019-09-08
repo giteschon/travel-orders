@@ -1,0 +1,42 @@
+﻿@model TravelOrders.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDService }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DbData>
+  <Drivers>
+    <Driver IDDriver="1">
+      <Name>Pero</Name>
+      <Surname>Peric</Surname>
+      <Mobile>0000</Mobile>
+      <LicenceNo>1253</LicenceNo>
+    </Driver>
+    <Driver IDDriver="2">
+      <Name>Ana</Name>
+      <Surname>Anic</Surname>
+      <Mobile>1111</Mobile>
+      <LicenceNo>54321</LicenceNo>
+    </Driver>
+  </Drivers>
+  <Vehicles>
+    <Vehicle IDVehicle="1">
+      <Type>fha</Type>
+      <IDBrand>1</IDBrand>
+      <YearOfProduction>2000</YearOfProduction>
+      <InitialKilometers>500</InitialKilometers>
+      <IsAvailable>true</IsAvailable>
+    </Vehicle>
+    <Vehicle IDVehicle="2">
+      <Type>keke</Type>
+      <IDBrand>5</IDBrand>
+      <YearOfProduction>2012</YearOfProduction>
+      <InitialKilometers>1800</InitialKilometers>
+      <IsAvailable>false</IsAvailable>
+    </Vehicle>
+    <Vehicle IDVehicle="3">
+      <Type>a</Type>
+      <IDBrand>2</IDBrand>
+      <YearOfProduction>2016</YearOfProduction>
+      <InitialKilometers>400</InitialKilometers>
+      <IsAvailable>false</IsAvailable>
+    </Vehicle>
+  </Vehicles>
+  <TravelOrders>
+    <TravelOrder IDTravelOrder="1">
+      <TravelOrderNo>1/2018</TravelOrderNo>
+      <TravelOrderDate>2018-10-30</TravelOrderDate>
+      <IDDriver>1</IDDriver>
+      <IDVehicle>1</IDVehicle>
+      <DateOfDeparture>2018-10-30</DateOfDeparture>
+      <StartTime>08:00:00</StartTime>
+      <EndTime>09:00:00</EndTime>
+      <DestinationStart>Zagreb</DestinationStart>
+      <DestinationEnd>Varaždin</DestinationEnd>
+      <BeginningCounterStatus>500</BeginningCounterStatus>
+      <EndCounterStatus>600</EndCounterStatus>
+      <IDTravelOrderType>1</IDTravelOrderType>
+      <IDDailyAllowance>1</IDDailyAllowance>
+    </TravelOrder>
+    <TravelOrder IDTravelOrder="2">
+      <TravelOrderNo>2/2019</TravelOrderNo>
+      <TravelOrderDate>2019-01-23</TravelOrderDate>
+      <IDDriver>2</IDDriver>
+      <IDVehicle>1</IDVehicle>
+      <DateOfDeparture>2019-01-23</DateOfDeparture>
+      <StartTime>08:00:00</StartTime>
+      <EndTime>10:00:00</EndTime>
+      <DestinationStart>Zagreb</DestinationStart>
+      <DestinationEnd>Varaždin</DestinationEnd>
+      <BeginningCounterStatus>500</BeginningCounterStatus>
+      <EndCounterStatus>600</EndCounterStatus>
+      <IDTravelOrderType>1</IDTravelOrderType>
+      <IDDailyAllowance>1</IDDailyAllowance>
+    </TravelOrder>
+    <TravelOrder IDTravelOrder="3">
+      <TravelOrderNo>3/2018</TravelOrderNo>
+      <TravelOrderDate>2018-12-30</TravelOrderDate>
+      <IDDriver>2</IDDriver>
+      <IDVehicle>2</IDVehicle>
+      <DateOfDeparture>2018-12-30</DateOfDeparture>
+      <StartTime>08:00:00</StartTime>
+      <EndTime>20:00:00</EndTime>
+      <DestinationStart>Zagreb</DestinationStart>
+      <DestinationEnd>Dubrovnik</DestinationEnd>
+      <BeginningCounterStatus>600</BeginningCounterStatus>
+      <EndCounterStatus>1200</EndCounterStatus>
+      <IDTravelOrderType>1</IDTravelOrderType>
+      <IDDailyAllowance>1</IDDailyAllowance>
+    </TravelOrder>
+  </TravelOrders>
+  <Routes />
+  <Services />
+  <Items />
+</DbData>

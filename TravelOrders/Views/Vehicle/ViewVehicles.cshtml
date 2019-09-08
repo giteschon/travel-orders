@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TravelOrders.Models.Vehicle>
+
+@{
+    ViewBag.Title = "ViewVehicles";
+}
+
+<h2>ViewVehicles</h2>
+
+<p>
+    @Html.ActionLink("Add Vehicle", "AddVehicle","Vehicle")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDVehicle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearOfProduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InitialKilometers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAvailable)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDVehicle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearOfProduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InitialKilometers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAvailable)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditVehicle", new { @idVehicle = item.IDVehicle }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("View services", "Index", "Services", new { @idVehicle = item.IDVehicle }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Report", "HtmlReport", "Services", new { @idVehicle = item.IDVehicle }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Delete", "DeleteVehicle", new { @idVehicle = item.IDVehicle }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
